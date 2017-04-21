@@ -14,8 +14,8 @@ import java.util.concurrent.TimeUnit;
 public class DictionaryPage extends PageObject {
 
     public void writeAnd(String arg0, String arg1) {
-        $(Locators.INPUT_FIELD.replace("$1", arg0)).sendKeys("v.kulikov");
-        $(Locators.INPUT_FIELD.replace("$1", arg1)).sendKeys("Southpawhustle88");
+        $(Locators.INPUT_FIELD.replace("$1", arg0)).sendKeys("");
+        $(Locators.INPUT_FIELD.replace("$1", arg1)).sendKeys("");
     }
 
     public void clickButton(String arg0) {
