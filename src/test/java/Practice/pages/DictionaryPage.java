@@ -8,8 +8,9 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
-@DefaultUrl("https://chat.aimprosoft.com/index.html#/login")
+@DefaultUrl("https://chat.aimprosoft.com")
 public class DictionaryPage extends PageObject {
 
     public void writeAnd(String arg0, String arg1) {
@@ -25,19 +26,25 @@ public class DictionaryPage extends PageObject {
 //TODO://///////////////////////////            CREATE          ////////////////////////////////////////////////////////
 
     public void createChannel() {
-        for (int i = 0; i < 200; i++) {
+        for (int i = 0; i < 330; i++) {
+            withTimeoutOf(20, TimeUnit.SECONDS).waitFor(ExpectedConditions.presenceOfElementLocated((By.xpath(Locators.ADD_ROOM_BTN))));
             $(Locators.ADD_ROOM_BTN).click();
-            waitFor(ExpectedConditions.visibilityOfElementLocated((By.xpath(Locators.PUBLIC_RADIOBUTTON))));
+            withTimeoutOf(5, TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated((By.xpath(Locators.PUBLIC_RADIOBUTTON))));
             enterRandomValue();
             $(Locators.PUBLIC_RADIOBUTTON).click();
-            waitFor(ExpectedConditions.elementToBeClickable((By.xpath(Locators.SUBBMIT))));
+            $(Locators.INVITE).sendKeys("r.konivec");
+            $(Locators.INVITE).sendKeys(Keys.ENTER);
+            withTimeoutOf(5, TimeUnit.SECONDS).waitFor(ExpectedConditions.elementToBeClickable((By.xpath(Locators.SUBBMIT))));
+            waitABit(500);
             $(Locators.SUBBMIT).click();
-            waitFor(ExpectedConditions.invisibilityOfElementLocated((By.xpath(Locators.ADD_ROOM))));
+            waitABit(500);
+            withTimeoutOf(5, TimeUnit.SECONDS).waitFor(ExpectedConditions.invisibilityOfElementLocated((By.xpath(Locators.ADD_ROOM))));
+            waitABit(500);
         }
     }
 
     public void enterRandomValue() {
-        int sizeName = 6; // size of random string
+        int sizeName = 30; // size of random string
         String charac = "abcdefghijklmnopqrstuvwxyz"; //Create the character set for random string
         Random r = new Random();
         String Name = generateString(r, charac, sizeName);
@@ -57,17 +64,17 @@ public class DictionaryPage extends PageObject {
 //TODO://///////////////////////////            DELETE          ////////////////////////////////////////////////////////
 
     public void deleteChannel() {
-        int channels = findAll(Locators.CHANNELS).size();
-        for (int i = 0; i < channels; i++) {
-            waitFor(ExpectedConditions.presenceOfElementLocated((By.xpath(Locators.FIRST_CHANNEL))));
+//        int channels = findAll(Locators.CHANNELS).size();
+        for (int i = 0; i < 500; i++) {
+            withTimeoutOf(20, TimeUnit.SECONDS).waitFor(ExpectedConditions.presenceOfElementLocated((By.xpath(Locators.FIRST_CHANNEL))));
             $(Locators.FIRST_CHANNEL).click();
-            waitFor(ExpectedConditions.elementToBeClickable((By.xpath(Locators.COG))));
+            withTimeoutOf(5, TimeUnit.SECONDS).waitFor(ExpectedConditions.presenceOfElementLocated((By.xpath(Locators.COG))));
             $(Locators.COG).click();
-            waitFor(ExpectedConditions.elementToBeClickable((By.xpath(Locators.DELETE))));
+            withTimeoutOf(5, TimeUnit.SECONDS).waitFor(ExpectedConditions.presenceOfElementLocated((By.xpath(Locators.DELETE))));
             $(Locators.DELETE).click();
-            waitFor(ExpectedConditions.elementToBeClickable((By.xpath(Locators.YES_DELETE))));
+            withTimeoutOf(5, TimeUnit.SECONDS).waitFor(ExpectedConditions.presenceOfElementLocated((By.xpath(Locators.YES_DELETE))));
             $(Locators.YES_DELETE).click();
-            waitFor(ExpectedConditions.invisibilityOfElementLocated((By.xpath(Locators.DELETE_TITLE))));
+            withTimeoutOf(5, TimeUnit.SECONDS).waitFor(ExpectedConditions.invisibilityOfElementLocated((By.xpath(Locators.DELETE_TITLE))));
         }
     }
 

@@ -8,8 +8,9 @@ Feature: Channels
   Scenario: create channels
     When Create channel
 
+
   Scenario: delete channels
     When Delete channel
 
   Scenario: Spam
-    When Spam "CLOWN ATTACK :clown:" message in the "o.lebed" room
+    When Spam "TEST" message in the "r.konivec" room
