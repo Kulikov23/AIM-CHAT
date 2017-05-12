@@ -1,6 +1,7 @@
 package Practice.steps.serenity;
 
 import Practice.pages.DictionaryPage;
+import Practice.pages.Exception_for_email;
 import net.thucydides.core.annotations.Step;
 
 import java.io.IOException;
@@ -55,4 +56,23 @@ public class EndUserSteps {
             e.printStackTrace();
         }
     }
+
+    @Step
+    public void postRequest() {
+        try {
+            dictionaryPage.postRequest();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Step
+    public void enterToMail() {
+        try {
+            dictionaryPage.enterToMail();
+        } catch (Exception_for_email exception_for_email) {
+            exception_for_email.printStackTrace();
+        }
+    }
+
 }

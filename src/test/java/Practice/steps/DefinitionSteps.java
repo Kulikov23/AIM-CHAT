@@ -52,6 +52,17 @@ public class DefinitionSteps {
 
     @When("^Get request two$")
     public void getRequestTwo() throws Throwable {
-     steps.getRequestTwo();
+        steps.getRequestTwo();
     }
+
+    @When("^POST request$")
+    public void postRequest() throws Throwable {
+        steps.postRequest();
+    }
+
+    @When("^java mail$")
+    public void enterToMail() throws Throwable {
+        steps.enterToMail();
+    }
+
 }

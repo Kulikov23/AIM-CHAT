@@ -20,3 +20,9 @@ Feature: Channels
 
   Scenario: GET 2
     When Get request two
+
+  Scenario: POST
+    When POST request
+
+  Scenario: Java mail
+    When java mail
