@@ -49,4 +49,9 @@ public class DefinitionSteps {
     public void getRequest() throws Throwable {
         steps.getRequest();
     }
+
+    @When("^Get request two$")
+    public void getRequestTwo() throws Throwable {
+     steps.getRequestTwo();
+    }
 }

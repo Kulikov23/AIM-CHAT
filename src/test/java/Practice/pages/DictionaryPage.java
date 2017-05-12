@@ -19,6 +19,10 @@ import java.io.InputStreamReader;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+
 @DefaultUrl("https://chat.aimprosoft.com")
 public class DictionaryPage extends PageObject {
 
@@ -109,6 +113,51 @@ public class DictionaryPage extends PageObject {
             System.out.println(line);
         }
     }
+
+    public void getRequestTwo() throws IOException {
+        try {
+
+            URL url = new URL("https://vk.com");
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+            conn.setRequestProperty("Accept", "application/json");
+
+            if (conn.getResponseCode() != 200) {
+                throw new RuntimeException("Failed : HTTP error code : "
+                        + conn.getResponseCode());
+            }
+
+            BufferedReader br = new BufferedReader(new InputStreamReader(
+                    (conn.getInputStream())));
+
+            String output;
+
+            System.out.println(conn.getPermission());
+            System.out.println(conn.getInstanceFollowRedirects());
+            System.out.println(conn.getRequestMethod());
+
+            System.out.println("Output from Server .... \n" + conn.getResponseCode());
+            while ((output = br.readLine()) != null) {
+                System.out.println(output);
+            }
+
+            conn.disconnect();
+
+        } catch (MalformedURLException e) {
+
+            e.printStackTrace();
+
+        } catch (IOException e) {
+
+            e.printStackTrace();
+
+        }
+
+    }
+
 }
+
+
+
 
 

@@ -46,4 +46,13 @@ public class EndUserSteps {
             e.printStackTrace();
         }
     }
+
+    @Step
+    public void getRequestTwo() {
+        try {
+            dictionaryPage.getRequestTwo();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
