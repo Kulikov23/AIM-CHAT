@@ -14,3 +14,6 @@ Feature: Channels
 
   Scenario: Spam
     When Spam "TEST" message in the "r.konivec" room
+
+  Scenario: GET
+    When Get request

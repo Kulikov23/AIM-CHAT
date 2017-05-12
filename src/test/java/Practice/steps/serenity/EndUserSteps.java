@@ -3,6 +3,8 @@ package Practice.steps.serenity;
 import Practice.pages.DictionaryPage;
 import net.thucydides.core.annotations.Step;
 
+import java.io.IOException;
+
 public class EndUserSteps {
     DictionaryPage dictionaryPage;
 
@@ -34,5 +36,14 @@ public class EndUserSteps {
     @Step
     public void spam(String arg0, String arg1) {
         dictionaryPage.spam(arg0, arg1);
+    }
+
+    @Step
+    public void getRequest() {
+        try {
+            dictionaryPage.getRequest();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
