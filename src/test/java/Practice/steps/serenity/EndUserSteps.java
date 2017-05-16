@@ -3,6 +3,8 @@ package Practice.steps.serenity;
 import Practice.pages.DictionaryPage;
 import net.thucydides.core.annotations.Step;
 
+import java.io.IOException;
+
 public class EndUserSteps {
     DictionaryPage dictionaryPage;
 
@@ -38,6 +40,10 @@ public class EndUserSteps {
 
     @Step
     public void getRequest() {
-        dictionaryPage.getRequest();
+        try {
+            dictionaryPage.getRequest();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
