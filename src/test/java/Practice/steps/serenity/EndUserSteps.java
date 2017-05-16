@@ -39,40 +39,5 @@ public class EndUserSteps {
         dictionaryPage.spam(arg0, arg1);
     }
 
-    @Step
-    public void getRequest() {
-        try {
-            dictionaryPage.getRequest();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Step
-    public void getRequestTwo() {
-        try {
-            dictionaryPage.getRequestTwo();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Step
-    public void postRequest() {
-        try {
-            dictionaryPage.postRequest();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Step
-    public void enterToMail() {
-        try {
-            dictionaryPage.enterToMail();
-        } catch (Exception_for_email exception_for_email) {
-            exception_for_email.printStackTrace();
-        }
-    }
 
 }

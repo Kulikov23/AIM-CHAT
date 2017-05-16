@@ -1,5 +1,5 @@
-Feature: Channels
-
+#Feature: Channels
+#
 #  Background:
 #    Given the user is on the login page
 #    Given Write "Login" and "Password"
@@ -8,21 +8,12 @@ Feature: Channels
 #  Scenario: create channels
 #    When Create channel
 #
-#
 #  Scenario: delete channels
 #    When Delete channel
 #
 #  Scenario: Spam
 #    When Spam "TEST" message in the "r.konivec" room
 #
-#  Scenario: GET
-#    When Get request
+  Scenario: GET
+    When Get request
 
-  Scenario: GET 2
-    When Get request two
-
-  Scenario: POST
-    When POST request
-
-  Scenario: Java mail
-    When java mail

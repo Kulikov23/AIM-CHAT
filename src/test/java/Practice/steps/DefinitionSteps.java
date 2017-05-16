@@ -45,24 +45,4 @@ public class DefinitionSteps {
         steps.spam(arg0, arg1);
     }
 
-    @When("^Get request$")
-    public void getRequest() throws Throwable {
-        steps.getRequest();
-    }
-
-    @When("^Get request two$")
-    public void getRequestTwo() throws Throwable {
-        steps.getRequestTwo();
-    }
-
-    @When("^POST request$")
-    public void postRequest() throws Throwable {
-        steps.postRequest();
-    }
-
-    @When("^java mail$")
-    public void enterToMail() throws Throwable {
-        steps.enterToMail();
-    }
-
 }
