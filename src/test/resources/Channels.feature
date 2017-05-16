@@ -1,5 +1,5 @@
-#Feature: Channels
-#
+Feature: Channels
+
 #  Background:
 #    Given the user is on the login page
 #    Given Write "Login" and "Password"
@@ -13,6 +13,6 @@
 #
 #  Scenario: Spam
 #    When Spam "TEST" message in the "r.konivec" room
-#
 
-
+  Scenario: GET
+    When get request

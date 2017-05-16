@@ -45,4 +45,8 @@ public class DefinitionSteps {
         steps.spam(arg0, arg1);
     }
 
+    @When("^get request$")
+    public void getRequest() throws Throwable {
+        steps.getRequest();
+    }
 }

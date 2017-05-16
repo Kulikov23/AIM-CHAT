@@ -1,10 +1,7 @@
 package Practice.steps.serenity;
 
 import Practice.pages.DictionaryPage;
-import Practice.pages.Exception_for_email;
 import net.thucydides.core.annotations.Step;
-
-import java.io.IOException;
 
 public class EndUserSteps {
     DictionaryPage dictionaryPage;
@@ -39,5 +36,8 @@ public class EndUserSteps {
         dictionaryPage.spam(arg0, arg1);
     }
 
-
+    @Step
+    public void getRequest() {
+        dictionaryPage.getRequest();
+    }
 }

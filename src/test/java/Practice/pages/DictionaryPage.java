@@ -100,6 +100,18 @@ public class DictionaryPage extends PageObject {
 
 //TODO://///////////////////////////            GET REQUEST          ////////////////////////////////////////////////////////
 
+    public void getRequest() throws IOException {
+        HttpClient client = new DefaultHttpClient();
+        HttpGet request = new HttpGet("https://chat.aimprosoft.com");
+        HttpResponse response = client.execute(request);
+        BufferedReader rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+        String line = "";
+        while ((line = rd.readLine()) != null) {
+            System.out.println(line);
+        }
+
+        System.out.println(request.getConfig());
+    }
 
 }
 
