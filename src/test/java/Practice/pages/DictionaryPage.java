@@ -109,8 +109,6 @@ public class DictionaryPage extends PageObject {
         while ((line = rd.readLine()) != null) {
             System.out.println(line);
         }
-
-        System.out.println(request.getConfig());
     }
 
 }
